@@ -12,10 +12,26 @@ import { Register } from './pages/public/Register';
 import { StudentDashboard } from './pages/student/StudentDashboard';
 import { StudentCourses } from './pages/student/StudentCourses';
 import { StudentTestInterface } from './pages/student/StudentTestInterface';
+import { StudentAttendance } from './pages/student/StudentAttendance';
+import { StudentFees } from './pages/student/StudentFees';
+import { StudentResults } from './pages/student/StudentResults';
+import { StudentTimetable } from './pages/student/StudentTimetable';
+import { StudentTests } from './pages/student/StudentTests';
+import { StudentDoubts } from './pages/student/StudentDoubts';
+import { StudentNotifications } from './pages/student/StudentNotifications';
+import { StudentProfile } from './pages/student/StudentProfile';
+
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { AdminStudents } from './pages/admin/AdminStudents';
 import { AdminTests } from './pages/admin/AdminTests';
 import { AdminCreateTest } from './pages/admin/AdminCreateTest';
+import { AdminBatches } from './pages/admin/AdminBatches';
+import { AdminCourses } from './pages/admin/AdminCourses';
+import { AdminTimetable } from './pages/admin/AdminTimetable';
+import { AdminAttendance } from './pages/admin/AdminAttendance';
+import { AdminResults } from './pages/admin/AdminResults';
+import { AdminFees } from './pages/admin/AdminFees';
+import { AdminDoubts } from './pages/admin/AdminDoubts';
 
 // Temporary components for pages not yet built fully
 const Placeholder = ({ name }: { name: string }) => (
@@ -50,14 +66,15 @@ export default function App() {
           <Route path="/student" element={<DashboardLayout />}>
             <Route path="dashboard" element={<StudentDashboard />} />
             <Route path="courses" element={<StudentCourses />} />
-            <Route path="attendance" element={<Placeholder name="Attendance" />} />
-            <Route path="timetable" element={<Placeholder name="Timetable" />} />
-            <Route path="tests" element={<Placeholder name="Practice Tests" />} />
+            <Route path="attendance" element={<StudentAttendance />} />
+            <Route path="timetable" element={<StudentTimetable />} />
+            <Route path="tests" element={<StudentTests />} />
             <Route path="tests/:id" element={<StudentTestInterface />} />
-            <Route path="results" element={<Placeholder name="Results & Analytics" />} />
-            <Route path="doubts" element={<Placeholder name="My Doubts" />} />
-            <Route path="notifications" element={<Placeholder name="Notifications" />} />
-            <Route path="profile" element={<Placeholder name="My Profile" />} />
+            <Route path="results" element={<StudentResults />} />
+            <Route path="fees" element={<StudentFees />} />
+            <Route path="doubts" element={<StudentDoubts />} />
+            <Route path="notifications" element={<StudentNotifications />} />
+            <Route path="profile" element={<StudentProfile />} />
             <Route index element={<Navigate to="dashboard" replace />} />
           </Route>
 
@@ -65,17 +82,17 @@ export default function App() {
           <Route path="/admin" element={<DashboardLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="students" element={<AdminStudents />} />
-            <Route path="batches" element={<Placeholder name="Batches Management" />} />
-            <Route path="courses" element={<Placeholder name="Course Management" />} />
-            <Route path="timetable" element={<Placeholder name="Timetable Management" />} />
-            <Route path="attendance" element={<Placeholder name="Attendance Audit" />} />
+            <Route path="batches" element={<AdminBatches />} />
+            <Route path="courses" element={<AdminCourses />} />
+            <Route path="timetable" element={<AdminTimetable />} />
+            <Route path="attendance" element={<AdminAttendance />} />
             <Route path="tests" element={<AdminTests />} />
             <Route path="tests/create" element={<AdminCreateTest />} />
-            <Route path="results" element={<Placeholder name="Result Insights" />} />
-            <Route path="fees" element={<Placeholder name="Fee Management" />} />
+            <Route path="results" element={<AdminResults />} />
+            <Route path="fees" element={<AdminFees />} />
             <Route path="analytics" element={<Placeholder name="Advanced Analytics" />} />
             <Route path="notifications" element={<Placeholder name="Announcements" />} />
-            <Route path="doubts" element={<Placeholder name="Doubt Resolution" />} />
+            <Route path="doubts" element={<AdminDoubts />} />
             <Route index element={<Navigate to="dashboard" replace />} />
           </Route>
 
