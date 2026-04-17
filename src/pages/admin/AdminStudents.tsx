@@ -102,9 +102,11 @@ export const AdminStudents = () => {
                 <tr key={std.id} className="border-b border-slate-50 hover:bg-slate-50/50 transition-colors group">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <div className={cn("w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm", std.bg)}>
-                        {std.name.charAt(0)}
-                      </div>
+                      <img 
+                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${std.name}`} 
+                        className={cn("w-10 h-10 rounded-full border-2 border-white ring-1 ring-slate-100", std.bg.replace('bg-', 'bg-opacity-20 text-'))} 
+                        alt={std.name}
+                      />
                       <div>
                         <p className="text-sm font-bold text-slate-900 group-hover:text-primary transition-colors">{std.name}</p>
                         <p className="text-xs text-slate-500 font-medium italic">{std.email}</p>

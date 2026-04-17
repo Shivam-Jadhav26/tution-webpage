@@ -25,7 +25,7 @@ export const courses: Course[] = [
     description: 'Comprehensive coverage of CBSE Class 10 boards syllabus with previous year question solving sessions.',
     class: '10th',
     subjects: ['Mathematics', 'Science', 'English', 'SST'],
-    thumbnail: 'https://picsum.photos/seed/math-board/400/250'
+    thumbnail: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=400&h=250'
   },
   {
     id: 'c2',
@@ -33,7 +33,7 @@ export const courses: Course[] = [
     description: 'Foundation course for Class 9 students focusing on core concepts needed for Class 10 and competitive exams.',
     class: '9th',
     subjects: ['Mathematics', 'Science', 'Social Science', 'English', 'Computer'],
-    thumbnail: 'https://picsum.photos/seed/science-lab/400/250'
+    thumbnail: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400&h=250'
   },
   {
     id: 'c3',
@@ -41,7 +41,7 @@ export const courses: Course[] = [
     description: 'Developing analytical and logical thinking through advanced problem solving in Math and Science.',
     class: '8th',
     subjects: ['Mathematics', 'Science', 'English', 'Social Science'],
-    thumbnail: 'https://picsum.photos/seed/books/400/250'
+    thumbnail: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400&h=250'
   },
   {
     id: 'c4',
@@ -49,7 +49,7 @@ export const courses: Course[] = [
     description: 'Strengthening basic concepts with fun-based learning and interactive visual classes.',
     class: '7th',
     subjects: ['Maths', 'English', 'General Science'],
-    thumbnail: 'https://picsum.photos/seed/kid-learn/400/250'
+    thumbnail: 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&q=80&w=400&h=250'
   }
 ];
 

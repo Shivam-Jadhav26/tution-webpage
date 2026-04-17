@@ -6,6 +6,9 @@ import {
 } from 'lucide-react';
 import { Button } from '../../components/common/Button';
 import { Card } from '../../components/common/Card';
+import { HeroSlider } from '../../components/public/HeroSlider';
+import { TestimonialSlider } from '../../components/public/TestimonialSlider';
+import { PartnerMarquee } from '../../components/public/PartnerMarquee';
 
 export const Home = () => {
   const fadeInUp = {
@@ -96,20 +99,15 @@ export const Home = () => {
           </div>
 
           <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", duration: 0.8 }}
+            transition={{ duration: 0.8 }}
             className="flex-1 relative"
           >
-            <div className="relative z-10 bg-white p-4 rounded-3xl shadow-2xl border border-slate-100">
-              <img 
-                src="https://picsum.photos/seed/learn/800/600" 
-                alt="Education" 
-                className="rounded-2xl"
-              />
-            </div>
+            <HeroSlider />
+            
             {/* Float Cards */}
-            <div className="absolute -top-8 -right-8 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 animate-bounce hidden sm:block">
+            <div className="absolute -top-6 -right-6 bg-white p-5 rounded-2xl shadow-2xl border border-slate-100 animate-bounce hidden sm:block z-20">
               <div className="flex items-center gap-3">
                 <div className="bg-emerald-100 p-2 rounded-lg text-emerald-600">
                   <CheckCircle2 size={24} />
@@ -123,6 +121,8 @@ export const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      <PartnerMarquee />
 
       {/* Stats Section */}
       <section className="py-20 bg-slate-900 text-white px-6 lg:px-12">
@@ -153,13 +153,17 @@ export const Home = () => {
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[10, 9, 8].map((grade) => (
-            <motion.div key={grade} {...fadeInUp}>
+          {[
+            { grade: 10, img: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600&h=400' },
+            { grade: 9, img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600&h=400' },
+            { grade: 8, img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600&h=400' }
+          ].map((course) => (
+            <motion.div key={course.grade} {...fadeInUp}>
               <Card className="group cursor-pointer">
                 <div className="aspect-video rounded-xl overflow-hidden mb-6">
-                  <img src={`https://picsum.photos/seed/grade${grade}/600/400`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                  <img src={course.img} alt={`Class ${course.grade}`} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 italic">Class {grade} Foundation</h3>
+                <h3 className="text-xl font-bold mb-3 italic">Class {course.grade} Foundation</h3>
                 <p className="text-sm text-slate-500 mb-6">Master core subjects including Calculus basics, Organic Chemistry, and advanced Civics.</p>
                 <div className="flex justify-between items-center">
                   <span className="text-primary font-bold">12 Subjects</span>
@@ -205,6 +209,19 @@ export const Home = () => {
             <Button size="lg" className="rounded-full">Request a Demo</Button>
           </div>
         </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-6 lg:px-12 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <motion.h2 {...fadeInUp} className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 italic">
+            Trusted by Thousands of Students & Parents
+          </motion.h2>
+          <motion.p {...fadeInUp} className="text-slate-600 max-w-2xl mx-auto italic font-medium">
+            Don't just take our word for it. Hear what our community has to say about their transformation journey.
+          </motion.p>
+        </div>
+        <TestimonialSlider />
       </section>
 
       {/* CTA section */}

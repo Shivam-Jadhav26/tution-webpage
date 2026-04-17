@@ -82,8 +82,17 @@ export const AdminCourses = () => {
 
               <div className="mt-auto flex items-center justify-between gap-4">
                  <div className="flex -space-x-2">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-7 h-7 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center text-[10px] font-black italic text-slate-400">T</div>
+                    {[
+                      { name: 'Dr. Vivek' },
+                      { name: 'Ms. Sonia' },
+                      { name: 'Mr. Verma' }
+                    ].map((instructor, i) => (
+                      <img 
+                        key={i} 
+                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${instructor.name}`} 
+                        className="w-7 h-7 rounded-full border-2 border-white bg-slate-100 shadow-sm" 
+                        alt={instructor.name}
+                      />
                     ))}
                     <div className="w-7 h-7 rounded-full bg-slate-50 border-2 border-white flex items-center justify-center text-[8px] font-black italic text-slate-500">+3</div>
                  </div>
